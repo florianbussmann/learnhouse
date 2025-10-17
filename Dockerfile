@@ -35,7 +35,8 @@ COPY --from=frontend-deps /app/node_modules ./node_modules
 COPY apps/web .
 
 # Set environment variables for the build
-ENV NEXT_PUBLIC_LEARNHOUSE_API_URL=http://localhost/api/v1/
+ARG NEXT_PUBLIC_LEARNHOUSE_API_URL=http://localhost/api/v1/
+ENV NEXT_PUBLIC_LEARNHOUSE_API_URL=${NEXT_PUBLIC_LEARNHOUSE_API_URL}
 ENV NEXT_PUBLIC_LEARNHOUSE_BACKEND_URL=http://localhost/
 ENV NEXT_PUBLIC_LEARNHOUSE_DOMAIN=localhost
 
