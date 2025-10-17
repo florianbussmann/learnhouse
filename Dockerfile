@@ -37,8 +37,10 @@ COPY apps/web .
 # Set environment variables for the build
 ARG NEXT_PUBLIC_LEARNHOUSE_API_URL=http://localhost/api/v1/
 ENV NEXT_PUBLIC_LEARNHOUSE_API_URL=${NEXT_PUBLIC_LEARNHOUSE_API_URL}
-ENV NEXT_PUBLIC_LEARNHOUSE_BACKEND_URL=http://localhost/
-ENV NEXT_PUBLIC_LEARNHOUSE_DOMAIN=localhost
+ARG NEXT_PUBLIC_LEARNHOUSE_BACKEND_URL=http://localhost/
+ENV NEXT_PUBLIC_LEARNHOUSE_BACKEND_URL=${NEXT_PUBLIC_LEARNHOUSE_BACKEND_URL}
+ARG NEXT_PUBLIC_LEARNHOUSE_DOMAIN=localhost
+ENV NEXT_PUBLIC_LEARNHOUSE_DOMAIN=${NEXT_PUBLIC_LEARNHOUSE_DOMAIN}
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
